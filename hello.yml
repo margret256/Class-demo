@@ -1,20 +1,21 @@
 # Name of the workflow
-name : Hello World workflow
+name: Hello World workflow
 
 # Events that trigger this workflow
 on:
   push:
     branches: [main]
-    pull_request:
-      branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
 
-      # Jobs to run
-      jobs:
-        greet:
-        # The type of runner to use e.g windows , ubuntu, mac
-        runs-on: ubuntu-lastest
-        #steps to excute in this job
-        steps:
-          # Run a single line of command
-          - name: Hello
-            run: echo "Hello World"
+# Jobs to run
+jobs:
+  greet:
+    # The type of runner to use e.g windows, ubuntu, mac
+    runs-on: ubuntu-latest
+
+    # Steps to execute in this job
+    steps:
+      # Run a single line of command
+      - name: Hello
+        run: echo "Hello World"
